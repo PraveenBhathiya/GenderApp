@@ -1,60 +1,64 @@
 {% extends 'base.html' %}
 
 {% block bodyblock %}
-<!-- 12 -->
-<div class="container">
+<div class="container my-5">
     <div class="row">
-        <div class="col">
-            <br><br>
-            <!-- form : upload the image -->
-            <h3 class="display-8" >Gender Classification</h3>
-            <p>Upload an image (.jpg, .jpeg, .png), our model will 
-                detect face first and then predict gender based on face (Male or Female)
-            </p>
-            <!-- upload image form -->
-            <form action="#" method="POST" enctype="multipart/form-data">
-                <div class="input-group">
-                    <input type="file" class="form-control" name="image_name" required>
-                    <input type="submit" value="Upload & Predict" class="btn btn-outline-primary">
-
-                </div>
-            </form>
-
+        <!-- Upload Section -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm p-4">
+                <h3 class="h4 mb-4">Gender Classification</h3>
+                <p class="text-muted mb-4">
+                    Upload an image (.jpg, .jpeg, .png), and our model will detect the face and predict the gender (Male or Female).
+                </p>
+                <!-- Upload Form -->
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <input type="file" class="form-control" name="image_name" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Upload & Predict</button>
+                </form>
+            </div>
         </div>
-        <div class="col-8">
-            <!-- report: prediction image, reporting (grayscale, eigen image and probability score) -->
+
+        <!-- Results Section -->
+        <div class="col-lg-8">
             {% if fileupload %}
-            <br><br>
-            <!-- predicted image -->
-            <h3 class="display-8"> Predicted Image</h3>
-            <img src="/static/predict/prediction_image.jpg" class="image-fluid" width="500" alt="">
-            <!-- reporting -->
-            <hr>
-            <br>
-            <table class="table table-hover table-striped">
-                <tr>
-                    <th>Detection Face</th>
-                    <th>Eigen Image</th>
-                    <th>Prediction Gender</th>
-                    <th>Score</th>
-                </tr>
-                {% for element in report %}
-                    <tr>
-                        <td>
-                            <img src="/static/predict/{{ element[0] }}" class="image-fluid" height="100" alt="">
-                        </td>
-                        <td>
-                            <img src="/static/predict/{{ element[1] }}" class="image-fluid" height="100" alt="">
-                        </td>
-                        <td>{{ element[2] }}</td>
-                        <td>{{ element[3] }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
+            <div class="card shadow-sm p-4">
+                <h3 class="h4 mb-4">Predicted Image</h3>
+                <img src="/static/predict/prediction_image.jpg" class="img-fluid rounded mb-4" alt="Predicted Image">
+
+                <!-- Reporting Table -->
+                <hr class="mb-4">
+                <h3 class="h4 mb-4">Analysis Report</h3>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Detection Face</th>
+                                <th>Eigen Image</th>
+                                <th>Prediction Gender</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for element in report %}
+                            <tr>
+                                <td>
+                                    <img src="/static/predict/{{ element[0] }}" class="img-thumbnail" height="100" alt="Detection Face">
+                                </td>
+                                <td>
+                                    <img src="/static/predict/{{ element[1] }}" class="img-thumbnail" height="100" alt="Eigen Image">
+                                </td>
+                                <td>{{ element[2] }}</td>
+                                <td>{{ element[3] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             {% endif %}
         </div>
     </div>
 </div>
-
-
 {% endblock %}

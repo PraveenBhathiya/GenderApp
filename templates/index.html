@@ -2,17 +2,76 @@
 
 {% block bodyblock %}
 
-<div class="container">
-    <br><br>
-    <h3 class="display-6">
-        Welcome to End to Face Recognition Web App Project
-    </h3>
-    <br>
-    <p>
-        Content
-    </p>
+<div class="container my-5">
+    <div class="row align-items-center">
+        <!-- Text Content -->
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInLeft">
+                Welcome to the Face Recognition Web App
+            </h1>
+            <p class="lead text-muted mb-4 animate__animated animate__fadeInLeft animate__delay-1s">
+                Revolutionize the way you interact with images! Our advanced Face Recognition application leverages cutting-edge machine learning models to detect faces, classify gender, and provide detailed analysis—all in real-time.
+            </p>
+            <div class="animate__animated animate__fadeInLeft animate__delay-2s">
+                <a href="/app/" class="btn btn-primary btn-lg">Get Started</a>
+            </div>
+        </div>
 
+        <!-- Image or Illustration -->
+        <div class="col-lg-6 text-center animate__animated animate__fadeInRight animate__delay-1s">
+            <img src="/static/images/home.jpg" class="img-fluid" alt="Face Recognition Illustration" width="500">
+        </div>
+    </div>
 </div>
 
+<!-- Features Section -->
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Why Choose Us?</h2>
+        <div class="row text-center">
+            <!-- Feature 1 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="card border-0 bg-transparent">
+                    <div class="card-body">
+                        <i class="fas fa-cogs fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Advanced AI Models</h5>
+                        <p class="card-text text-muted">
+                            Powered by state-of-the-art machine learning algorithms for accurate predictions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="card border-0 bg-transparent">
+                    <div class="card-body">
+                        <i class="fas fa-user-friends fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">User-Friendly Interface</h5>
+                        <p class="card-text text-muted">
+                            Simple and intuitive design for seamless user experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-3s">
+                <div class="card border-0 bg-transparent">
+                    <div class="card-body">
+                        <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Real-Time Analysis</h5>
+                        <p class="card-text text-muted">
+                            Get instant results with detailed reports and visualizations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Animation Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- FontAwesome Icons -->
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 
 {% endblock %}

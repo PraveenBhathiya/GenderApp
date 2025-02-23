@@ -2,19 +2,20 @@
 
 {% block bodyblock %}
 
-<div class="container">
-    <br><br>
-    <h3 class="display-8">Face Recognition Application</h3>
+<div class="container text-center mt-5">
+    <h1 class="display-4 font-weight-bold mb-4">Face Recognition Application</h1>
     
-    <p>
-        Gender Classification: This app is driven by data and machine learning model.
-            As soon as user upload the image, in background it convert into grayscale, crop face, convert into eigen image and 
-            finally it model to predict. All this functionality dumped in the flask app.
+    <p class="lead text-muted mb-4">
+        This application uses advanced machine learning models to classify gender based on facial features. 
+        Upload an image, and the system will process it in real-time, converting it to grayscale, detecting the face, 
+        and predicting the gender with high accuracy.
     </p>
-    <img src="/static/images/002.PNG" class="image-fluid" width="600" alt="">
 
-    <a class="btn btn-outline-primary" href="/app/gender/">Gender App</a>
+    <div class="mb-5">
+        <img src="/static/images/002.PNG" class="img-fluid rounded shadow" width="600" alt="Face Recognition Demo">
+    </div>
 
+    <a class="btn btn-primary btn-lg" href="/app/gender/">Try Gender Classification</a>
 </div>
 
 {% endblock %}
